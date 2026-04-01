@@ -16,3 +16,52 @@ For version-specific docs, use `/org/project/version` from the `library` output 
 
 If a command fails with a quota error, inform the user and suggest `npx ctx7@latest login` or setting `CONTEXT7_API_KEY` env var for higher limits. Do not silently fall back to training data.
 <!-- context7 -->
+
+## Global Rules
+
+- Check `/spec` before making meaningful changes.
+- Treat relevant files in `/spec` as authoritative project instructions.
+- If behavior, scope, architecture, routes, config, or page requirements change, update the relevant `/spec` docs in the same task.
+
+- Read before editing.
+- Inspect the target files and nearby usage before changing code.
+
+- Check `/components` and existing shared code before creating anything new.
+- Reuse or extend existing components, functions, templates, and patterns whenever possible.
+- Only create new components or helpers when no existing option reasonably fits.
+
+- Make the smallest correct change.
+- Keep diffs focused on the requested task.
+- Do not refactor unrelated code.
+
+- Prefer clarity over cleverness.
+- Use the simplest solution that fully solves the problem.
+
+- Never rename, move, or delete files unless explicitly requested.
+
+- Validate external input at the boundary.
+- Handle null, empty, malformed, and unexpected values explicitly.
+
+- Fail clearly.
+- Do not swallow errors.
+- Return or log actionable errors with enough context to debug.
+
+- Never hardcode secrets, credentials, tokens, or environment-specific values.
+
+- Prefer existing dependencies and platform-native features.
+- Do not add new dependencies unless they provide clear value.
+
+- Verify changed behavior before finishing.
+- Run the narrowest useful check available.
+- If verification cannot be run, state that clearly and describe what was checked.
+- The exception is when doing visual styling changes that will clearly be seen while running a project. These do not need to be tested
+
+- Update docs when behavior, configuration, setup, or usage changes.
+
+- Preserve accessibility.
+- Do not break keyboard access, labels, focus behavior, or semantic structure.
+
+- Make external writes retry-safe whenever possible.
+- Assume retries, duplicate events, rate limits, and partial failures can occur.
+
+- Check for redundancies, logic loops, and best practices. If you see a way to make anything more efficient, suggest it to me and I will determine if it is worth it.

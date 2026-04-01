@@ -42,3 +42,24 @@
 
 - Keep client state local and narrow.
 - Do not turn full pages into Client Components when only a small interactive leaf needs it.
+
+## TypeScript Rules
+
+- Keep TypeScript strict mode enabled.
+- Do not weaken compiler settings without a clear reason.
+
+- Do not use `any` unless there is no practical alternative.
+- Prefer `unknown` for truly unknown values, then narrow before use.
+
+- Prefer narrowing, guards, and inference over type assertions.
+- Do not use double assertions such as `as unknown as` unless absolutely necessary.
+
+- Use `import type` and `export type` for type-only imports and exports.
+
+- Model external data with explicit types at the boundary.
+- Validate and narrow API, form, URL, storage, and webhook data before it reaches app logic.
+
+- Prefer shared types and utility types over duplicate handwritten shapes.
+
+- Use primitive types like `string`, `number`, and `boolean`.
+- Do not use boxed object types like `String`, `Number`, `Boolean`, or `Object`.

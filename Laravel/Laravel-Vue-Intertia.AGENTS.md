@@ -7,7 +7,7 @@ Follow the existing project structure and patterns before introducing new ones.
 
 ## Laravel + Vue + Inertia Rules
 
-- Follow Laravel, Inertia, and Vue conventions before inventing custom structure.
+- Follow Laravel, Inertia, Vue, and shadcn-vue conventions before inventing custom structure.
 
 - Keep Laravel as the source of truth.
 - Keep routing, middleware, authorization, validation, persistence, and business logic in Laravel.
@@ -20,6 +20,7 @@ Follow the existing project structure and patterns before introducing new ones.
 
 - Keep Vue components thin.
 - Use Vue for presentation, local interaction, and page state, not core business rules.
+- Prefer existing shadcn-vue UI primitives for standard front-end architecture.
 
 - Validate request data in Laravel.
 - Prefer Form Requests for non-trivial validation and authorization.
@@ -63,3 +64,26 @@ Follow the existing project structure and patterns before introducing new ones.
 - Prefer targeted Laravel HTTP or feature tests for server behavior.
 - Prefer targeted front-end verification for Vue and Inertia rendering changes.
 - If verification cannot be run, state exactly what was checked and what remains unverified.
+
+## shadcn-vue Rules
+
+- This repo uses shadcn-vue components as the default UI building blocks.
+
+- Before building a new UI component, check whether an equivalent shadcn-vue component already exists in the repo.
+- Check existing `@/components/ui` files and current usage before creating custom UI primitives.
+
+- If a needed shadcn-vue component already exists in the repo, use it.
+- Do not rebuild, restyle from scratch, or replace an existing shadcn-vue component with a custom version unless explicitly required.
+
+- If the needed shadcn-vue component does not exist yet, add it with the shadcn-vue CLI before building custom UI for that pattern.
+- Use the repo's package manager command for shadcn-vue CLI installs.
+- For npm-based repos, run `npx shadcn-vue@latest add {component}`.
+
+- Prefer shadcn-vue components by default for buttons, inputs, dialogs, dropdowns, sheets, tabs, tables, form controls, and other standard UI patterns.
+- Do not hand-roll standard UI primitives when shadcn-vue already provides them.
+
+- Reuse the generated shadcn-vue component files and their established import paths.
+- Follow the repo’s existing shadcn-vue patterns for composition, styling, and file placement.
+
+- Treat shadcn-vue components as project-owned code.
+- Modify them carefully and keep changes consistent with the existing shadcn-vue structure in the repo.

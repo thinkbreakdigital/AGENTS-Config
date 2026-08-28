@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pixel Art Codex"
+  short_description: "Build deterministic pixel art in project workspaces"
+  default_prompt: "Use $pixel-art-codex to design, render, export, and validate pixel-art assets for this project."
